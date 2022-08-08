@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone/screens/calls.dart';
 import 'package:whatsapp_clone/screens/chats.dart';
+import 'package:whatsapp_clone/screens/status.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -55,8 +57,8 @@ class MyApp extends StatelessWidget {
             //   camera: mainCamera,
             // ),
             ChatScreen(),
-            Text("Status"),
-            Text("Calls"),
+            StatusScreen(),
+            CallsScreen(),
           ]),
         ),
       ),

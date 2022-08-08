@@ -21,7 +21,7 @@ class _ChatScreenState extends State<ChatScreen> {
       ),
       Chat(
           dp: "https://thumbs.dreamstime.com/b/vector-illustration-avatar-dummy-logo-collection-image-icon-stock-isolated-object-set-symbol-web-137160339.jpg",
-          name: "John",
+          name: "Ashish",
           message: "Ok I'll do it."),
       Chat(
         dp: "https://c6oxm85c.cloudimg.io/cdno/n/q85/https://az617363.vo.msecnd.net/imgmodels/models/MD10002954/untit9521a9013a921a3bbb56d9fe8f5f9779_thumb3872f63f05c818fa90fb01d6a7d89cbe_thumb.jpg",
@@ -36,10 +36,10 @@ class _ChatScreenState extends State<ChatScreen> {
 class Chat extends StatelessWidget {
   const Chat(
       {Key? key,
-        required this.dp,
-        required this.name,
-        required this.message,
-        this.status = 1})
+      required this.dp,
+      required this.name,
+      required this.message,
+      this.status = 1})
       : super(key: key);
 
   final String dp;
@@ -47,28 +47,10 @@ class Chat extends StatelessWidget {
   final String message;
   final int status;
 
-  Widget isNewMessage(status) {
-    if (status == 0) {
-      return Container(
-        width: 17,
-        height: 22,
-        decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: Colors.white,
-            image: DecorationImage(
-                fit: BoxFit.fill,
-                image: NetworkImage(
-                    "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Eo_circle_green_number-1.svg/640px-Eo_circle_green_number-1.svg.png"))),
-      );
-    } else {
-      return Container();
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.fromLTRB(10, 10, 2, 2),
+      margin: EdgeInsets.fromLTRB(10, 10, 5, 2),
       child: Row(
         children: [
           DisplayPicture(
@@ -79,12 +61,8 @@ class Chat extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  children: [
-                    ContactName(
-                      name: name,
-                    ),
-                  ],
+                ContactName(
+                  name: name,
                 ),
                 Message(
                   message: message,
@@ -93,15 +71,12 @@ class Chat extends StatelessWidget {
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 200),
-            child: isNewMessage(status),
-          )
         ],
       ),
     );
   }
 }
+
 class Message extends StatelessWidget {
   const Message({Key? key, required this.message, this.status = 1})
       : super(key: key);
