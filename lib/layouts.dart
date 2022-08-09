@@ -6,7 +6,7 @@ Icon suitableIcon(IconData icon, {Color? color}) {
   return Icon(
     icon,
     color: color,
-    size: 16,
+    size: 15,
   );
 }
 
