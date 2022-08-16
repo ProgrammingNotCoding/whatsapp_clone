@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/layouts.dart';
+import 'package:whatsapp_clone/screens/messages.dart';
 
 class ChatScreen extends StatefulWidget {
   const ChatScreen({Key? key}) : super(key: key);
@@ -56,10 +57,25 @@ class Chat extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text("Not Implemented Yet!"),
-        duration: Duration(seconds: 1),
-      )),
+      onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => MessagesScreen(name: name, dp: dp))),
+      // PageRouteBuilder(
+      //     pageBuilder: (context, a1, a2) => MessagesScreen(
+      //           name: name,
+      //           dp: dp,
+      //         ),
+      //     transitionsBuilder:
+      //         (context, animation, secondaryAnimation, child) =>
+      //             SlideTransition(
+      //               position: Tween(begin: Offset(1, 0), end: Offset.zero)
+      //                   .animate(animation),
+      //               child: MessagesScreen(
+      //                 name: name,
+      //                 dp: dp,
+      //               ),
+      //             ))),
       child: Container(
         margin: EdgeInsets.fromLTRB(10, 10, 10, 2),
         child: Row(

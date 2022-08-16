@@ -18,6 +18,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+          colorScheme:
+              ColorScheme.light(primary: Color.fromRGBO(7, 94, 84, 1))),
       debugShowCheckedModeBanner: false,
       home: DefaultTabController(
         initialIndex: 1,
@@ -35,7 +38,6 @@ class MyApp extends StatelessWidget {
                 onPressed: () {},
               )
             ],
-            backgroundColor: Color.fromRGBO(7, 94, 84, 1),
             bottom: TabBar(indicatorColor: Colors.white, tabs: [
               Tab(
                 icon: Icon(Icons.camera_alt),
