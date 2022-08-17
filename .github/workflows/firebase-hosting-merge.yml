@@ -13,7 +13,6 @@ jobs:
       - name: Checking firebase.json
         run: |
           ls .
-          ls ./demo
           ls ./
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
