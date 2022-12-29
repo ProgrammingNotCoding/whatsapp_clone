@@ -2,6 +2,8 @@
 
 A dummy project for learning UI development with flutter by trying to clone the popular chat app WhatsApp.
 
+# [See the UI here (only developed for mobile view)](https://whatsapp-clone-2347.web.app)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
